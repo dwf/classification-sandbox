@@ -8,8 +8,8 @@ Mostly the product of boredom.
 Discrete (Multinomial) Naive Bayes
 ----------------------------------
 
-This will fit a multinomial Naive Bayes model on observations which are 
-assumed to be discrete. The input is a two-dimensional NumPy array 
+This will fit a multinomial Naive Bayes classifier on observations which 
+are assumed to be discrete. The input is a two-dimensional NumPy array 
 (observations are rows, predictors are columns) and a one-dimensional
 label vector. The elements can be integers, strings, or other Python
 objects; anything that can be meaningfully compared for sorting and 
@@ -19,6 +19,11 @@ The following IPython session demonstrates most of its features
 (``fit_discrete_nb`` can take an optional third "pseudocounts" argument,
 which indicates how many "fake observations" to add if a given feature
 level/value has not been observed for a class; it defaults to 1).
+
+The session uses the `mushroom dataset`_ from the UCI Machine Learning
+Repository.
+
+.. _mushroom dataset: http://archive.ics.uci.edu/ml/machine-learning-databases/mushroom/
 
 ::
 

@@ -65,7 +65,6 @@ def fit_discrete_nb(features, labels, pseudocounts=1):
             counts[counts == 0] = pseudocounts
             counts = np.atleast_1d(np.float64(counts))
             counts /= float(counts.sum())
-            print counts
             stats[label, f_index, 0:len(counts)] = counts
             
     return stats, feature_levels, unique_labels, \
@@ -96,8 +95,6 @@ def classify_discrete_nb(test_features, model, return_posterior=False):
     
     guesses = np.argmax(joints, axis=1)
     
-    print np.isnan(joints).sum()
-
     if return_posterior:
         # Do it in-place since we don't actually need this array anymore.
         np.exp(joints, joints)
